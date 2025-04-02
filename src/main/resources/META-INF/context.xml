@@ -1,0 +1,50 @@
+
+<!--JMS (Java Message Service)-->
+<Context>
+<Resource name="jms/MyQueue"
+          auth="Container"
+          type="javax.jms.Queue"
+          factory="org.apache.activemq.jndi.JNDIReferenceFactory"
+          providerUrl="tcp://localhost:61616"/>
+
+<!--    Конфигурация DataSource для MySQL    -->
+
+    <Resource name="jdbc/MySQLDB"
+          auth="Container"
+          type="javax.sql.DataSource"
+          maxActive="50"
+          maxIdle="10"
+          maxWait="10000"
+          username="root"
+          password="password"
+          driverClassName="com.mysql.cj.jdbc.Driver"
+          url="jdbc:mysql://localhost:3306/mydatabase"/>
+
+<!--    Конфигурация DataSource для PostgreSQL-->
+    <!--    <Resource name="jdbc/PostgresDB"-->
+    <!--              auth="Container"-->
+    <!--              type="javax.sql.DataSource"-->
+    <!--              maxActive="100"-->
+    <!--              maxIdle="30"-->
+    <!--              maxWait="10000"-->
+    <!--              username="postgres"-->
+    <!--              password="postgres"-->
+    <!--              driverClassName="org.postgresql.Driver"-->
+    <!--              url="jdbc:postgresql://localhost:5432/postgres"/>-->
+
+<!-- В коде Используйте InitialContext для получения доступа к ресурсу. Например:-->
+<!--    Context ctx = new InitialContext();-->
+<!--    DataSource ds = (DataSource) ctx.lookup("java:/comp/env/jdbc/PostgresDB");-->
+
+<!--    Альтернативное решение (фильтрация классов)-->
+        <JarScanner>
+        <JarScanFilter
+                defaultPluggabilityScan="false"
+                defaultTldScan="true"
+                tldScan="*.jar"
+                pluggabilityScan="*.jar"
+                pluggabilitySkip="module-info.class" />
+    </JarScanner>
+
+</Context>
+
