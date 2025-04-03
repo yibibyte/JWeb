@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         // Перенаправляем на index.html (если нужно)
-        resp.sendRedirect("/views/index.jsp");
+        resp.sendRedirect("//index.jsp");
 
         // ИЛИ рендерим HTML прямо из сервлета (альтернатива)
         /*
