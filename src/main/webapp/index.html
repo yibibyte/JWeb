@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>User Form</title>
+</head>
+<body>
+<form action="custom" method="POST">
+    Name: <input name="username" />
+    <br><br>
+    Age: <input name="userage" />
+    <br><br>
+    Gender: <input type="radio" name="gender" value="female" checked />Female
+    <input type="radio" name="gender" value="male" />Male
+    <br><br>
+    Country: <select name="country">
+    <option>Russia</option>
+    <option>China</option>
+    <option>Vegria</option>
+    <option>Idian</option>
+</select>
+    <br><br>
+    Courses:
+    <input type="checkbox" name="say" value="Hello" checked />Hello
+    <input type="checkbox" name="say" value="Hi" checked />Hi
+    <input type="checkbox" name="say" value="Greetings" checked />Greetings
+    <br><br>
+    <input type="submit" value="Submit" />
+</form>
+</body>
+</html>
