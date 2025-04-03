@@ -4,11 +4,13 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServlet;
+import java.io.PrintWriter;
 
 public class HelloServlet extends HttpServlet {
     public HelloServlet() {
         logger.info("============ HelloServlet created! ============");
     }
+
     private static final Logger logger = LoggerFactory.getLogger(HelloServlet.class);
 
     @Override
@@ -17,5 +19,14 @@ public class HelloServlet extends HttpServlet {
         response.setContentType("text/html");
         response.setCharacterEncoding("UTF-8"); // кириллица !! - обязательно !! не забываем ее указывать, когда выводим русские буквы в браузер
         response.getWriter().println("<h1>Hello World! I'm from Servlet (Мой класс HelloServlet)</h1>");
+        String message = getServletConfig().getInitParameter("message");
+        response.setContentType("text/html");
+        PrintWriter writer = response.getWriter();
+        try {
+            writer.println("<h2>" + message + "</h2>");
+        } finally {
+            writer.close();
+        }
     }
 }
+
