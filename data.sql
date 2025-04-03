@@ -1,4 +1,21 @@
 
+
+INSERT INTO users (
+    username,
+    password_hash,
+    first_name,
+    last_name,
+    email,
+    age,
+    is_active,
+    role,
+    is_email_verified,
+    phone_number,
+    avatar_url
+) VALUES
+-- Администраторы
+('admin', '$2a$10$xJwL5vx5z5U2hB6cLZqkUeYl6Z7wQ8vR9mN0sK1L2M3N4O5P6Q7R8S9T0', 'Алексей', 'Петров', 'admin@example.com', 35, true, 'ADMIN', true, '+79111234567', 'https://example.com/avatars/admin.jpg');
+
 // Вставка пользователей с уникальными именами и хеш-паролями случайными данными
 INSERT INTO users (
     username,

@@ -13,7 +13,8 @@ public class HelloServlet extends HttpServlet {
 
     @Override
     public void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
+        logger.info("doGet called");
         response.setContentType("text/html");
-        response.getWriter().println("<h1>Hello World! Im from Servlet</h1>");
+        response.getWriter().println("<h1>Hello World! I'm from Servlet (Мой класс HelloServlet)</h1>");
     }
 }

@@ -7,11 +7,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/examplePage")
+import javax.servlet.*;
+import javax.servlet.http.*;
+import javax.servlet.annotation.*;
+import java.io.IOException;
+
+@WebServlet("/example")
 public class ExampleServlet extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setCharacterEncoding("UTF-8");
-        response.setContentType("text/html; charset=UTF-8");
-        request.getRequestDispatcher("/WEB-INF/example.jsp").forward(request, response);
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // Установка атрибутов в разные контексты
+        request.setAttribute("requestAttribute", "Данные в контексте запроса");
+
+        HttpSession session = request.getSession();
+        session.setAttribute("sessionAttribute", "Данные в контексте сессии");
+
+        ServletContext application = getServletContext();
+        application.setAttribute("applicationAttribute", "Данные в контексте приложения");
+
+        // Передача управления JSP странице
+        request.getRequestDispatcher("/views/example.jsp").forward(request, response);
     }
 }

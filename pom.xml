@@ -16,7 +16,36 @@
         <maven.compiler.target>17</maven.compiler.target>
     </properties>
 
+<!--    <properties>-->
+<!--        <servlet.version>3.0.1</servlet.version>-->
+<!--        <jsp.version>2.2</jsp.version>-->
+<!--        <jstl.version>1.2</jstl.version>-->
+<!--    </properties>-->
+
     <dependencies>
+<!--        &lt;!&ndash; Servlet API &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>javax.servlet-api</artifactId>-->
+<!--            <version>${servlet.version}</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+<!--        &lt;!&ndash; JSP API &ndash;&gt;-->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet.jsp</groupId>-->
+<!--            <artifactId>javax.servlet.jsp-api</artifactId>-->
+<!--            <version>${jsp.version}</version>-->
+<!--            <scope>provided</scope>-->
+<!--        </dependency>-->
+
+        <!-- JSTL (для тегов <c:if>, <c:forEach> и т.д.) -->
+<!--        <dependency>-->
+<!--            <groupId>javax.servlet</groupId>-->
+<!--            <artifactId>jstl</artifactId>-->
+<!--            <version>${jstl.version}</version>-->
+<!--        </dependency>-->
+
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
@@ -89,16 +118,16 @@
             <artifactId>postgresql</artifactId>
             <version>42.7.4</version>
         </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.17.2</version> <!-- Актуальная версия -->
-        </dependency>
-        <dependency>
-            <groupId>com.fasterxml.jackson.datatype</groupId>
-            <artifactId>jackson-datatype-jsr310</artifactId>
-            <version>2.16.1</version> <!-- Для работы с LocalDate -->
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--            <artifactId>jackson-databind</artifactId>-->
+<!--            <version>2.17.2</version> &lt;!&ndash; Актуальная версия &ndash;&gt;-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>com.fasterxml.jackson.datatype</groupId>-->
+<!--            <artifactId>jackson-datatype-jsr310</artifactId>-->
+<!--            <version>2.16.1</version> &lt;!&ndash; Для работы с LocalDate &ndash;&gt;-->
+<!--        </dependency>-->
         <!-- Для Maven обновить Tomcat до версии 9.0+ -->
 <!--        <dependency>-->
 <!--            <groupId>org.apache.tomcat.embed</groupId>-->
