@@ -15,6 +15,7 @@ public class HelloServlet extends HttpServlet {
     public void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, java.io.IOException {
         logger.info("doGet called");
         response.setContentType("text/html");
+        response.setCharacterEncoding("UTF-8"); // кириллица !! - обязательно !! не забываем ее указывать, когда выводим русские буквы в браузер
         response.getWriter().println("<h1>Hello World! I'm from Servlet (Мой класс HelloServlet)</h1>");
     }
 }

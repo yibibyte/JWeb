@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
         List<User> testUsers = User.generateTestUsers();
 
         if (dataSource == null) {
-            throw new ServletException("DataSource is null");
+            LOGGER.error("DataSource is null");
         }
 
         // Инициализация пула соединений (HikariCP, Tomcat JDBC и т.д.)
@@ -57,7 +57,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         // Перенаправляем на index.html (если нужно)
-        resp.sendRedirect("index.html");
+        resp.sendRedirect("/views/index.jsp");
 
         // ИЛИ рендерим HTML прямо из сервлета (альтернатива)
         /*

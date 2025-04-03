@@ -35,17 +35,17 @@
               driverClassName="com.mysql.cj.jdbc.Driver"
               url="jdbc:mysql://localhost:3306/mydatabase"/>
 
-    <!--    Конфигурация DataSource для PostgreSQL-->
-    <!--    <Resource name="jdbc/PostgresDB"-->
-    <!--              auth="Container"-->
-    <!--              type="javax.sql.DataSource"-->
-    <!--              maxActive="100"-->
-    <!--              maxIdle="30"-->
-    <!--              maxWait="10000"-->
-    <!--              username="postgres"-->
-    <!--              password="postgres"-->
-    <!--              driverClassName="org.postgresql.Driver"-->
-    <!--              url="jdbc:postgresql://localhost:5432/postgres"/>-->
+<!--        Конфигурация DataSource для PostgreSQL-->
+        <Resource name="jdbc/PostgresDB"
+                  auth="Container"
+                  type="javax.sql.DataSource"
+                  maxActive="100"
+                  maxIdle="30"
+                  maxWait="10000"
+                  username="postgres"
+                  password="postgres"
+                  driverClassName="org.postgresql.Driver"
+                  url="jdbc:postgresql://localhost:5432/account_db"/>
 
     <!-- В коде Используйте InitialContext для получения доступа к ресурсу. Например:-->
     <!--    Context ctx = new InitialContext();-->

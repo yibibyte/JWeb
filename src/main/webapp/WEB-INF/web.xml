@@ -1,0 +1,18 @@
+<web-app xmlns="http://xmlns.jakarta.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jakarta.org/xml/ns/javaee http://xmlns.jakarta.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+
+    <display-name>My Jakarta EE Application</display-name>
+
+    <servlet>
+        <servlet-name>HelloServlet</servlet-name>
+        <servlet-class>servlets.hello.HelloServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HelloServlet</servlet-name>
+        <url-pattern>/home</url-pattern>
+    </servlet-mapping>
+
+</web-app>
